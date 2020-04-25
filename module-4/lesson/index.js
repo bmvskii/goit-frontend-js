@@ -1,101 +1,72 @@
-// const people = [];
+// @@@@@@@@@ ЦИКЛЫ
+
+const from = 5;
+const to = 10;
+
+// 1 - ФАЗА СОЗДАНИЯ СЧЕТЧИКА
+// 2 - ПРОВЕРКА УСЛОВИЯ
+// 3 - ЕСЛИ УСЛОВИЕ ВОЗВРАЩАЕТ TRUE, то
+// а) ВЫПОЛНЯЕМ ТЕЛО ЦИКЛА
+// б) УВЕЛИЧИВАЕМ СЧЕТЧИК
+// ЕСЛИ УСЛОВИЕ ВОЗВРАЩАЕТ FALSE - выходим из цикла
 //
-// for (let i = 0; i < 42000000; i++) {
-//     people.push({
-//        name: `User ${i + 1}`,
-//        salary: Math.round(Math.random() * 4000 + 3000),
-//     });
+// for (let index = from; index <= to; index++) {
+//     console.log('Индекс больше, чем количество повторов', index <= to);
+//     console.log("Индекс:", index); // 9
 // };
 //
 //
-// let sum = 0;
-// for (let i = 0; i < people.length; i++) {
-//     sum += people[i].salary;
-// }
-
-// * / + -
-
-//break, continue
-
-// while
-let counter = 0;
-
-// while (counter < 100) {
-//     if (counter < 10) {
-//         console.log(`${counter} меньше 10`);
-//     }
-//
-//     if (counter == 10) {
-//         console.log(`${counter} равняется 10`);
-//     }
-//
-//     if (counter > 10 && counter <= 20) {
-//         console.log(`${counter} больше 10 и меньше 20`);
-//     }
-//
-//     if (counter > 20) {
-//         break;
-//     }
-//
+// let counter = 0;
+// while (counter <= to) {
+//     console.log("Счетчик:", counter);
 //     counter++;
-// }
+// };
 
-// do...while
-//  do {
-//     if (counter < 10) {
-//         console.log(`${counter} меньше 10`);
+// let isStrongPassword = false;
+// do {
+//     const pswd = prompt("Введите пароль:");
+//     const digits = '0123456789';
+//     const symbols = '!@#$%^&*()_+';
+//
+//     let hasDigits = false;
+//     let hasSymbols = false;
+//
+//     for (let i = 0; i < pswd.length; i++) {
+//         if (digits.includes(pswd[i])) {
+//             hasDigits = true;
+//         }
+//         if (symbols.includes(pswd[i])) {
+//             hasSymbols = true;
+//         }
 //     }
 //
-//     if (counter == 10) {
-//         console.log(`${counter} равняется 10`);
+//     if (pswd.length < 8) {
+//         console.log("Длина пароля должна быть больше 8 символов");
+//         continue;
+//     };
+//
+//     if (!hasSymbols) {
+//         console.log("В пароле отстутствуют символы");
+//         continue;
 //     }
 //
-//     if (counter > 10 && counter <= 20) {
-//         console.log(`${counter} больше 10 и меньше 20`);
+//     if (!hasDigits) {
+//         console.log("В пароле отстутствуют цифры");
+//         continue;
 //     }
 //
-//     if (counter > 20) {
-//         break;
-//     }
+//     isStrongPassword = true;
 //
-//     counter++;
-// } while (counter < 100);
-
-// const a = 100;
-// const b = 435;
-// let result = 0;
+// } while (!isStrongPassword);
 //
-// console.log(a * b);
+// alert("Пароль успешно установлен!");
 
-const originalStr = prompt("Введите строку");
+const array = ["A", "B", "C", "D", "E", "F"];
 
-const bannedWords = ["дурак", "дура", "путин", "коронавирус", 'омг', 'рофл'];
-const pool = ['а', 'о', 'е', 'e', 'и', "э", 'у'];
-const symbols = ['*', '#', '%', '&', '@', '$'];
-
-let updatedStr = [];
-const words = originalStr.split(' ');
-
-for (let i = 0; i < words.length; i++) {
-    let updatedWord = '';
-    if (bannedWords.includes(words[i].toLowerCase())) {
-        const bannedWord = words[i];
-
-        for (let j = 0; j < bannedWord.length; j++) {
-            if (pool.includes(bannedWord[j].toLowerCase())) {
-                const index = Math.round(Math.random() * (symbols.length - 1));
-                updatedWord += symbols[index];
-            } else {
-                updatedWord += bannedWord[j];
-            }
-        }
-    } else {
-        updatedWord += words[i];
-    }
-
-    updatedStr.push(updatedWord);
+for (let i = 0; i < array.length; i++) {
+    console.log("FOR:", array[i]);
 }
 
-console.log("Оригинал:", originalStr);
-console.log("С цензурой:", updatedStr.join(' '));
-
+for (letter of array) {
+    console.log("FOR OF:", letter);
+}
