@@ -1,255 +1,109 @@
-// @@@@@@@@@@@@@@@@@@@@@@@@@ ФУНКЦИИ @@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@ МАССИВЫ @@@@@@@@@@@@@@@@@@@@@@
 
+// ----- Создание массива
+const superheroes = ["Batman", "SpiDeRmAn", "Captain America"];
 
+// ----- Доступ к элементам
+// #### НАПОМИНАНИЕ! Индекс в массиве начинается с 0
 
-// ---- ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ
+// console.log(superheroes[0]);
+// console.log(superheroes[1]);
+// console.log(superheroes[2]);
 
-// const название_фунционального_выражения = function(аргумент1, аргумент2, ...) {
-//              ТЕЛО ФУНКЦИИ
-//              ОПЕРАТОР return
-//              БЕЗ НЕГО функция вернет undefined
-// };
+// ----- Переопределение массива
 
-// const array = [1, 2, 3, 4, 5];
-// const array1 = [1, 3, 5, 7, 8];
-// const array2 = [-0, 12, 4, 6, 8];
+// console.log("ДО ОБНОВЛЕНИЯ:");
+// console.log(superheroes[0]);
+// console.log(superheroes[1]);
 //
-// const getSum = function(array) {
-//     let sum = 0;
-//     for (let i = 0; i < array.length; i++) {
-//         sum += array[i];
-//     }
-//     return sum;
-// };
-
-// str - параметр
-// const removeWhitespace = function(str) {
-//     // return str.toUpperCase();
-//     // return;
-// };
-
-// const upperString = removeWhitespace("Sadasd", "asdasd", "Asdsadsa");
-
-// const getAverage = function(array) {
-//     let sum = getSum(array);
-//     return sum / array.length;
-// };
-
-// const filter = function(array, mode) {
-//     const filteredArray = [];
+// superheroes[0] = 'Robin';
+// superheroes[1] = 'Shreder';
 //
-//     for (let i = 0; i < array.length; i++) {
-//         if (mode === '-') {
-//             if (array[i] < 0) {
-//                 filteredArray.push(array[i]);
-//             }
-//         } else if (mode === '+') {
-//             if (array[i] > 0) {
-//                 filteredArray.push(array[i]);
-//             }
-//         } else if (mode === '') {
-//
-//         }
-//     }
-//
-//     return filteredArray;
-// };
-//
-// console.log(filter([1, -5, 2, -4, 3, -3, 0], '-'));
-// console.log(filter([1, -5, 2, -4, 3, -3, 0], '+'));
+// console.log("ПОСЛЕ ОБНОВЛЕНИЯ:");
+// console.log(superheroes[0]);
+// console.log(superheroes[1]);
 
+// ----- Длина массива
 
-// --- Functional expression
-// --- Функции для калькулятора
-// const add = function(a, b) {
-//     return a + b;
-// };
-//
-// const substract = function(a,b) {
-//     return a - b;
-// };
-//
-// const divide = function(a, b) {
-//     return a / b;
-// };
-//
-// const multiply = function(a, b) {
-//     return a * b;
-// };
-//
-// console.log(add(5, 10));
-// console.log(substract(10, 5));
-// console.log(divide(100, 5));
-// console.log(multiply(2, 7));
+// console.log("Текущая длина массива: ", superheroes.length);
+// console.log("Массив: ", superheroes);
 
-// ??? ЗАДАЧА
-// ---- Решение
-
-// const phrase = `Привет, Ребята. \
-// Сегодня мы с вами пройдем офигенную тему под названием 'Функции'.
-// С помощью ФУНКЦИЙ, вы сможете сделать ваш код компактней, гибче и МОЩНЕЕ`;
+// Увеличили длину массива
+// superheroes.length = 6;
 //
-// const makeSentenceUppercased = function (sentence) {
-//     let _sentence = '';
-//     for (let i = 0; i < sentence.length; i++) {
-//         _sentence += sentence[i].toUpperCase();
-//     }
-//     return _sentence;
-// };
+// console.log("Обновленная длина массива: ", superheroes.length);
+// console.log("Обновленный массив: ", superheroes);
 //
-// const makeSentenceLowercased = function(sentence) {
-//     let _sentence = '';
-//     for (let i = 0; i < sentence.length; i++) {
-//         _sentence += sentence[i].toLowerCase();
-//     }
-//     return _sentence;
-// };
+// console.log("Пустая ячейка:", superheroes[3]);
+
+// Урезали длину массива
+// superheroes.length = 2;
 //
-// const makeSentenceRandomcased = function(sentence) {
-//     let _sentence = '';
-//     for (let i = 0; i < sentence.length; i++) {
-//         if (i % 2 === 0 ) {
-//             _sentence += sentence[i].toUpperCase();
-//         } else {
-//             _sentence += sentence[i].toLowerCase();
-//         }
-//     }
-//     return _sentence;
-// };
-//
-// const transformSentence = function(_phrase) {
-//     const splittedPhrase = _phrase.split('.');
-//     const updatedSentences = [];
-//
-//     for (let i = 0; i < splittedPhrase.length; i++) {
-//         if (i === 0) {
-//             updatedSentences.push(makeSentenceLowercased(splittedPhrase[i]));
-//         } else if (i === 1) {
-//             updatedSentences.push(makeSentenceUppercased(splittedPhrase[i]));
-//         } else if (i === 2) {
-//             updatedSentences.push(makeSentenceRandomcased(splittedPhrase[i]));
-//         }
-//     }
-//     return updatedSentences.join('.');
-// };
-//
-// const result = transformSentence(phrase);
-//
-// console.log("ORIGINAL:", phrase);
-// console.log("TRANSFORMED:", result);
+// console.log("Обновленная длина массива: ", superheroes.length);
+// console.log("Обновленный массив: ", superheroes);
 
-// ---- ПОРЯДОК ВЫПОЛНЕНИЯ КОДА
+// #### ЛАЙФХАК!
+// #### Чтобы очистить массив - присваиваем ему длину 0
 
-// const functionC = function() {
-//     console.log("НАЧАЛО ВЫПОЛНЕНИЯ ФУНКЦИИ C"); // 5 вывод
-//     console.log("КОНЕЦ ВЫПОЛНЕНИЯ ФУНКЦИИ C"); // 6 вывод
-//     // return;
-// };
-//
-// const functionB = function() {
-//     console.log("НАЧАЛО ВЫПОЛНЕНИЯ ФУНКЦИИ B"); // 3 вывод
-//     functionC(); // 4 вывод
-//     // functionC - return undefined
-//     console.log("КОНЕЦ ВЫПОЛНЕНИЯ ФУНКЦИИ B"); // 7 Вывод
-//     // return;
-// };
-//
-// const functionA = function() {
-//     console.log("НАЧАЛО ВЫПОЛНЕНИЯ ФУНКЦИИ А"); // 1 вывод
-//     functionB(); // 2 вызов функции
-//     // functionB - return undefined
-//     console.log("КОНЕЦ ВЫПОЛНЕНИЯ ФУНКЦИИ A"); // 8 вывод
-// };
+// superheroes.length = 0;
+// console.log("Очищенный массив: ", superheroes);
 
-// ---- ВЫЗОВ ФУНКЦИИ
-// functionA();
-
-// ---- ПАРАМЕТРЫ ПО УМОЛЧАНИЮ
-// const generateArray = function(from = 0, to = 100) {
-//     const array = [];
-//     for (let i = from; i < to; i++) {
-//         array.push(i);
-//     }
-//     return array;
-// };
-
-// ---- ПЛОХО
-// const func = function(arg1 = 'Hello', arg2, arg3 ) {
-//
-// };
-
-// ---- ХОРОШО
-// const func = function(arg1, arg2, arg3 = 'Hello' ) {
-//
-// };
-
-/*
-const array = generateArray(); - вызов
-const array1 = generateArray(80);
-const array2 = generateArray(150, 170);
-
-console.log(array);
-console.log(array1);
-console.log(array2);*/
-
-// ---- ПАРАМЕТР arguments
-
-// const add = function() {
-//     let sum = 0;
-//
-//     for (const argument of arguments) {
-//         sum += argument;
-//     }
-//
-//     return sum;
-// };
-// const sum = add(1,2,3,4,5,6,7,8,9,10,123123,123123,435345345,45645,4564565464);
-// console.log(sum);
-
-// ---- Function declaration
-
-const getPersonGroup = function(age) {
-    if (age < 10) {
-        return 'Ребенок';
-    } else if (age < 18) {
-        return 'Подросток';
-    } else if (age < 60) {
-        return "Взрослый";
-    } else {
-        return "Пенсионер";
-    }
-};
-const showText = function (name, group) {
-    console.log(`${name}, вы относитесь к группе ${group}`);
-};
-const getUserAge = function () {
-    const age = Number.parseInt(prompt("Введите ваш возраст:"));
-    return age;
-};
-const getUserName = function () {
-    const name = prompt("Введите ваше имя:");
-    return name;
-};
-const run = function () {
-    const name = getUserName();
-    const age = getUserAge();
-
-    const group = getPersonGroup(age);
-
-    showText(name, group);
-};
-
-run();
-
-// getSum([1, 24, 5]);
-//
-// function getSum(array) {
-//     let sum = 0;
-//
-//     for (let i = 0; i < array.length; i++) {
-//         sum += array[i];
-//     }
-//
-//     console.log(sum);
+// ----- Перебор массива с помощью цикла for
+// for (let index = 0; index < superheroes.length; index++) {
+//     console.log(superheroes[index]);
 // }
 
+// Массив с пользователями
+// const fans = [];
+// const FANS_NUMBER = 55000;
+
+// Заполнение данных с помощью массива
+// for (let i = 0; i < FANS_NUMBER; i++) {
+//     fans[i] = `Фанатский билет № ${i+1}`;
+// }
+//
+// console.log("Фанатских билетов:", fans);
+
+// ----- Перебор массива с помощью цикла for..of
+
+// Перебор супергероев
+// for (let superhero of superheroes) {
+//
+//     // SpIdErMaN
+//     if (superhero.toLowerCase() === 'spiderman') {
+//         superhero = superhero.toUpperCase();
+//         break;
+//     } else {
+//         continue;
+//     }
+// }
+//
+// for (const superhero of superheroes) {
+//     console.log(superhero);
+// }
+
+// ----- Многомерные массивы
+
+const brands = [
+    ["Mars", "Snickers", "Bounty"],
+    ["Coca-Cola", "Pepsi", "Sprite"],
+    ["Orbit", "Dirol", "Stimorol"],
+    ["Adidas", "Nike", "Reebok"]
+];
+
+const matrix = [
+    ["11", "12", "13"],
+    ["21", "22", "23"],
+    ["31", "32", "33"],
+];
+
+// Перебор элементов многомерного массива
+for (let i = 0; i < brands.length; i++) {
+    // Весь массив
+    console.log(brands[i]);
+
+    for (let j = 0; j < brands[i].length; j++) {
+        // Конкретный элемент в массиве
+        console.log(brands[i][j]);
+    }
+}

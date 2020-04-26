@@ -1,7 +1,5 @@
 // @@@@@@@@@@@@@@@@@@@@@@@@@ ФУНКЦИИ @@@@@@@@@@@@@@@@@@@@@@
 
-
-
 // ---- ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ
 
 // const название_фунционального_выражения = function(аргумент1, аргумент2, ...) {
@@ -61,21 +59,11 @@
 
 // --- Functional expression
 // --- Функции для калькулятора
-// const add = function(a, b) {
-//     return a + b;
-// };
-//
-// const substract = function(a,b) {
-//     return a - b;
-// };
-//
-// const divide = function(a, b) {
-//     return a / b;
-// };
-//
-// const multiply = function(a, b) {
-//     return a * b;
-// };
+// const add = (a, b) => a + b;
+// const substract = (a, b) => a - b;
+// const divide = (a, b) => a / b;
+// const multiply = (a, b) => a * b;
+
 //
 // console.log(add(5, 10));
 // console.log(substract(10, 5));
@@ -207,39 +195,39 @@ console.log(array2);*/
 // console.log(sum);
 
 // ---- Function declaration
-
-const getPersonGroup = function(age) {
-    if (age < 10) {
-        return 'Ребенок';
-    } else if (age < 18) {
-        return 'Подросток';
-    } else if (age < 60) {
-        return "Взрослый";
-    } else {
-        return "Пенсионер";
-    }
-};
-const showText = function (name, group) {
-    console.log(`${name}, вы относитесь к группе ${group}`);
-};
-const getUserAge = function () {
-    const age = Number.parseInt(prompt("Введите ваш возраст:"));
-    return age;
-};
-const getUserName = function () {
-    const name = prompt("Введите ваше имя:");
-    return name;
-};
-const run = function () {
-    const name = getUserName();
-    const age = getUserAge();
-
-    const group = getPersonGroup(age);
-
-    showText(name, group);
-};
-
-run();
+//
+// const getPersonGroup = function(age) {
+//     if (age < 10) {
+//         return 'Ребенок';
+//     } else if (age < 18) {
+//         return 'Подросток';
+//     } else if (age < 60) {
+//         return "Взрослый";
+//     } else {
+//         return "Пенсионер";
+//     }
+// };
+// const showText = function (name, group) {
+//     console.log(`${name}, вы относитесь к группе ${group}`);
+// };
+// const getUserAge = function () {
+//     const age = Number.parseInt(prompt("Введите ваш возраст:"));
+//     return age;
+// };
+// const getUserName = function () {
+//     const name = prompt("Введите ваше имя:");
+//     return name;
+// };
+// const run = function () {
+//     const name = getUserName();
+//     const age = getUserAge();
+//
+//     const group = getPersonGroup(age);
+//
+//     showText(name, group);
+// };
+//
+// run();
 
 // getSum([1, 24, 5]);
 //
@@ -252,4 +240,58 @@ run();
 //
 //     console.log(sum);
 // }
+
+// ---- Старый вариант
+const add1 = function(a, b, c) {
+    const average = a + b + c / 3;
+    return average;
+}
+
+// ---- Новый вариант
+const add2 = (a, b, c) => {
+    const average = a + b + c / 3;
+    return average;
+};
+
+// ---- Старый вариант
+const hello1 = function() {
+    console.log("Hello1");
+}
+
+// ---- Новый вариант
+const hello2 = () => console.log("Hello1");
+
+// ---- Старый вариант
+const showNumber1= function(number) {
+    console.log(number);
+};
+
+// ---- Новый вариант
+const showNumber2 = number => console.log(number);
+
+// ---- Старый вариант
+const avg1 = function() {
+    let sum = 0;
+    for (arg of arguments) {
+        sum += arg;
+    }
+    return sum / arguments.length;
+}
+
+// ---- Новый вариант
+const avg2 = (...args) => {
+    let sum = 0;
+    for (arg of args) {
+        sum += arg;
+    }
+    return sum / args.length;
+}
+
+
+
+
+
+
+
+
 

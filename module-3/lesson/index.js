@@ -69,7 +69,7 @@
 // }
 
 
-// 3
+// 3 задание решение
 // const result = 5 % 2;
 //
 // if (result === 0) {
@@ -78,7 +78,7 @@
 //     console.log(`${result} eвро`);
 // }
 //
-// // 4
+// // 4 задание решение
 // const MaximAge = 55;
 // if (MaximAge >= 0 && MaximAge <= 16) {
 //     // вывести дети
@@ -88,7 +88,7 @@
 //     // вывести пенсионеры
 // }
 
-//5
+//5 задание
 const firstTry = Math.round(Math.random());
 const secondTry = Math.round(Math.random());
 

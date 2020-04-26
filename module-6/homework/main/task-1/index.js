@@ -1,0 +1,1 @@
+const hello1 = () => "Привiт, JavaScript";
