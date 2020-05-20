@@ -126,87 +126,90 @@
 
 // @@@@@@ ПРИМЕР 2 - Программа , которая регистрирует людей из разных стран и опредляет количество больных коронавирусом
 
-// const ukraineRegions = ["Киевская", "Харьковская", "Днепропетровская", "Львовская", "Херсонская", "Сумская", "Черниговская", "Житомирская"];
-// const russianRegions = ["Томская", "Белгородская", "Московская", "Ленинградская"];
-// const polandRegions  = ["Краков", "Варшава", "Вроцлав"];
-// const georgiaRegions = ["Регион А", "Регион Б", "Тбилиси"];
-//
-// let totalIllPeople = 0;
-// let totalHealthyPeople = 0;
-//
-// const registratePeopleInSystem = function (regions, amount = 10000) {
-//     const people = [];
-//
-//     for (let i = 0; i < amount; i++) {
-//         const personRegion = regions[Math.round(Math.random() * (regions.length - 1))];
-//         const isHealthy = Boolean(Math.round(Math.random()));
-//
-//         people.push({
-//             name: `Person #${i+1}`,
-//             region: personRegion,
-//             isHealthy
-//         });
-//     }
-//
-//     return people;
-// };
-//
-// const createRegionsStatistic = function (regions) {
-//     let regionStat = [];
-//
-//     for (let i = 0; i < regions.length; i++) {
-//         regionStat.push({
-//             name: regions[i],
-//             totalIllPeople: 0,
-//         });
-//     }
-//
-//     return regionStat;
-// };
-// const checkPeopleOnIllnesses = function(people, _stats) {
-//     for (let i = 0; i < people.length; i++) {
-//         if (!people[i].isHealthy) {
-//             totalIllPeople++;
-//
-//             for (let j = 0; j < _stats.length; j++) {
-//                 if (_stats[j].name === people[i].region) {
-//                     _stats[j].totalIllPeople++;
-//                     break;
-//                 }
-//             }
-//         } else {
-//             totalHealthyPeople++;
-//         }
-//     }
-// };
-//
-// const showGlobalStatics = function(statistics) {
-//     console.log("Всего больных:", totalIllPeople);
-//     console.log("Всего здоровых:", totalHealthyPeople);
-//     for (let i = 0; i < statistics.length; i++) {
-//         showStatistics(statistics[i]);
-//     }
-// };
-// const showStatistics = function(statistics) {
-//     for (let i = 0; i < statistics.length; i++) {
-//         console.log(`${statistics[i].name} - Количество больных ${statistics[i].totalIllPeople}`);
-//     }
-// };
-//
-// const ukrainianPeople = registratePeopleInSystem(ukraineRegions,20000);
-// const russianPeople = registratePeopleInSystem(russianRegions,100000);
-// const polandPeople = registratePeopleInSystem(polandRegions, 5000);
-// const georgianPeople = registratePeopleInSystem(georgiaRegions, 50000);
-//
-// const ukrainianStats = createRegionsStatistic(ukraineRegions);
-// const russianStats = createRegionsStatistic(russianRegions);
-// const polandStats = createRegionsStatistic(polandRegions);
-// const georgianStats = createRegionsStatistic(georgiaRegions);
-//
-// checkPeopleOnIllnesses(ukrainianPeople, ukrainianStats);
-// checkPeopleOnIllnesses(russianPeople, russianStats);
-// checkPeopleOnIllnesses(polandPeople, polandStats);
-// checkPeopleOnIllnesses(georgianPeople, georgianStats);
-//
-//
-// showGlobalStatics([ukrainianStats, polandStats, russianStats, georgianStats]);
+const ukraineRegions = ["Киевская", "Харьковская", "Днепропетровская", "Львовская", "Херсонская", "Сумская", "Черниговская", "Житомирская"];
+const russianRegions = ["Томская", "Белгородская", "Московская", "Ленинградская"];
+const polandRegions  = ["Краков", "Варшава", "Вроцлав"];
+const georgiaRegions = ["Регион А", "Регион Б", "Тбилиси"];
+
+let totalIllPeople = 0;
+let totalHealthyPeople = 0;
+
+const registratePeopleInSystem = function (regions, amount = 10000) {
+    const people = [];
+
+    for (let i = 0; i < amount; i++) {
+        const personRegion = regions[Math.round(Math.random() * (regions.length - 1))];
+        const isHealthy = Boolean(Math.round(Math.random()));
+
+        people.push({
+            name: `Person #${i+1}`,
+            region: personRegion,
+            isHealthy
+        });
+    }
+
+    return people;
+};
+
+const createRegionsStatistic = function (regions) {
+    let regionStat = [];
+
+    for (let i = 0; i < regions.length; i++) {
+        regionStat.push({
+            name: regions[i],
+            totalIllPeople: 0,
+        });
+    }
+
+    return regionStat;
+};
+
+const checkPeopleOnIllnesses = function(people, _stats) {
+    for (let i = 0; i < people.length; i++) {
+        if (!people[i].isHealthy) {
+            totalIllPeople++;
+
+            for (let j = 0; j < _stats.length; j++) {
+                if (_stats[j].name === people[i].region) {
+                    _stats[j].totalIllPeople++;
+                    break;
+                }
+            }
+        } else {
+            totalHealthyPeople++;
+        }
+    }
+};
+
+const showGlobalStatics = function(statistics) {
+    console.log("Всего больных:", totalIllPeople);
+    console.log("Всего здоровых:", totalHealthyPeople);
+
+    for (let i = 0; i < statistics.length; i++) {
+        showStatistics(statistics[i]);
+    }
+};
+
+const showStatistics = function(statistics) {
+    for (let i = 0; i < statistics.length; i++) {
+        console.log(`${statistics[i].name} - Количество больных ${statistics[i].totalIllPeople}`);
+    }
+};
+
+const ukrainianPeople = registratePeopleInSystem(ukraineRegions,20000);
+const russianPeople = registratePeopleInSystem(russianRegions,100000);
+const polandPeople = registratePeopleInSystem(polandRegions, 5000);
+const georgianPeople = registratePeopleInSystem(georgiaRegions, 50000);
+
+const ukrainianStats = createRegionsStatistic(ukraineRegions);
+const russianStats = createRegionsStatistic(russianRegions);
+const polandStats = createRegionsStatistic(polandRegions);
+const georgianStats = createRegionsStatistic(georgiaRegions);
+
+checkPeopleOnIllnesses(ukrainianPeople, ukrainianStats);
+checkPeopleOnIllnesses(russianPeople, russianStats);
+checkPeopleOnIllnesses(polandPeople, polandStats);
+checkPeopleOnIllnesses(georgianPeople, georgianStats);
+
+
+showGlobalStatics([ukrainianStats, polandStats, russianStats, georgianStats]);
